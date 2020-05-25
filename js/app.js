@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 //
 
 //Reference for form collection(3)
-let formMessage = firebase.database().ref('PathRep/');
+let formMessage = firebase.database().ref('History/');
 
 var onComplete = function(error) {
     if (error) {
@@ -26,47 +26,42 @@ var onComplete = function(error) {
 
 //listen for submit event//(1)
 document
-  .getElementById('pathoform')
+  .getElementById('registrationform')
   .addEventListener('submit', formSubmit);
 
 //Submit form(1.2)
 function formSubmit(e) {
   e.preventDefault();
   // Get Values from the DOM
-  let pno = document.querySelector('#pno').value;
-  let hb = document.querySelector('#hb').value;
-  let tlc = document.querySelector('#tlc').value;
-  let burea = document.querySelector('#burea').value;
-  let scretan = document.querySelector('#scretan').value;
-  let sna = document.querySelector('#sna').value;
-  let sk = document.querySelector('#sk').value;
-  let scl = document.querySelector('#scl').value;
-  let smg = document.querySelector('#smg').value;
-  let sgot = document.querySelector('#sgot').value;
-  let sgpt = document.querySelector('#sgpt').value;
-  let alp = document.querySelector('#alp').value;
-  let salbu = document.querySelector('#salbu').value;
-
-  
-console.log(hb + ' ' +tlc + ' ' +burea + ' ' +scretan + ' ' +sna + ' ' +sk + ' ' +scl + ' ' +smg
-+ ' ' +sgot + ' ' +sgpt + ' ' +alp + ' ' +salbu  
- );
+  var gen;
+  let name = document.querySelector('#name').value;
+  let address = document.querySelector('#addr').value;
+  let phone = document.querySelector('#phone').value;
+  let mrnum = document.querySelector('#mrno').value;
+  let age = document.querySelector('#age').value;
+  let doa = document.querySelector('#datepicker-13').value;
+  // let doa = document.querySelector('#datepicker-14').value;
+  if (document.getElementById('m').checked) {
+  gen = document.getElementById('m').value;
+  }
+  else if (document.getElementById('f').checked) {
+  gen = document.getElementById('f').value;
+  }
+  else{
+    gen = document.getElementById('o').value;
+  }
+console.log(name+ ' ' + address + ' ' + phone + ' ' + gen + ' ' + mrnum + ' ' + doa + ' ' +age);
   //send message values
   //sendMessage(name,kk, email, password, bio, job, interest);
 
-  formMessage.child(pno).set({
-    hb: hb,
-    tlc: tlc,
-    burea: burea,
-    scretan: scretan,
-    sna: sna,
-    scl: scl,
-    sk : sk,
-    smg : smg,
-    sgot : sgot,
-    sgpt : sgpt,
-    alp : alp,
-    salbu : salbu
+  formMessage.child(mrnum).set({
+    name: name,
+    address: address,
+    phone: phone,
+    gen:gen,
+    mrnum : mrnum,
+    doa : doa,
+    age : age
   },onComplete);
 
   //Show Alert Message(5)
@@ -78,7 +73,7 @@ console.log(hb + ' ' +tlc + ' ' +burea + ' ' +scretan + ' ' +sna + ' ' +sk + ' '
   }, 7000);
 
   //Form Reset After Submission(7)
-  document.getElementById('pathoform').reset();
+  document.getElementById('registrationform').reset();
 }
 
 //Send Message to Firebase(4)

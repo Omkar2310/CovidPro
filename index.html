@@ -1,19 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Registration Form</title>
+  <title>Firebase Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
 
-  <a class="btn btn-primary" href="history.html" role="button1">Link1</a>
-  <a class="btn btn-primary" href="pathorep.html" role="button2">Link2</a>
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <a href="homepage.html">Advance to Dashboard</a>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBjjcGO7mjaWsyNTgHipcigiBw79IRgpGI",
+    authDomain: "covid19pro-c7cbf.firebaseapp.com",
+    databaseURL: "https://covid19pro-c7cbf.firebaseio.com",
+    projectId: "covid19pro-c7cbf",
+    storageBucket: "covid19pro-c7cbf.appspot.com",
+    messagingSenderId: "381278041834",
+    appId: "1:381278041834:web:c4de25becc29a5bb7ec993",
+    measurementId: "G-BKHR3LZ055"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>
