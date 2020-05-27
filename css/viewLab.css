@@ -3,18 +3,18 @@ body, h1, h2 {
  padding:0;
 }
 body {
- background:#039be5;
+ background-image: url("img/BASE.jpg");
  font-family: Arial, sans-serif;
 }
 h1 {
  padding:10px;
- background:#ffcc00;
+ background:purple;
 }
 
 /*---------------------------*/
 /* Read Users */
 /*---------------------------*/
-#userList {
+#userDate {
  margin:0;
  padding:0;
  width:200px;
@@ -23,13 +23,13 @@ h1 {
  border:1px solid #4fc3fc;
 }
 
-#userList h2 {
+#userDate h2 {
  padding:10px;
  margin:0;
  color:white;
 }
 
-#userList li {
+#userDate li {
  padding:5px 10px;
  border-top:1px solid #4fc3fc;
  cursor: pointer;
@@ -37,11 +37,11 @@ h1 {
  font-style: italic;
 }
 
-#userList li:hover {
+#userDate li:hover {
  background: #4fc3fc;
 }
 
-#userDetail {
+#userID {
  float:left;
  width:200px;
  margin:10px;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Firebase Image Upload in Javascript</title>
+  </head>
+  <body>
+    <input type="text" id="mrn" />
+    <input type="file" id="photo" />
+    <button onclick="uploadImage()">Upload Image</button>
+    <!-- Stream video via webcam -->
+
+ </body>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+
+  <script>
+    var firebaseConfig = {
+       apiKey: "AIzaSyBjjcGO7mjaWsyNTgHipcigiBw79IRgpGI",
+    authDomain: "covid19pro-c7cbf.firebaseapp.com",
+    databaseURL: "https://covid19pro-c7cbf.firebaseio.com",
+    projectId: "covid19pro-c7cbf",
+    storageBucket: "covid19pro-c7cbf.appspot.com",
+    messagingSenderId: "381278041834",
+    appId: "1:381278041834:web:c4de25becc29a5bb7ec993",
+    measurementId: "G-BKHR3LZ055"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+
+    function uploadImage() {
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#photo").files[0];
+      var name1=document.getElementById("mrn").value;
+      var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+      today = mm + '-' + dd + '-' + yyyy;
+//document.write(today);
+      const name =  today + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = ref.child(name1 + '/' + name).put(file, metadata);
+      task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          console.log(url);
+          document.querySelector("#image").src = url;
+        })
+        .catch(console.error);
+    }
+
+const snap = document.getElementById("snap");
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+  </script>
+</html>

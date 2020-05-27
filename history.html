@@ -57,8 +57,155 @@
         <p>Enter DOA: <input type = "text" id = "datepicker-13"></p>
         <!-- <p>Enter DOA: <input type = "text" id = "datepicker-14"></p> -->
 
+      <hr/>
+      <label for="que1" required>Q1)During this illness, did the patient experience any of the following symptoms?:</label>
 
-    
+      <div class="checkbox firstQue">
+      <label><input type="checkbox" id="Fever" value="Fever">Fever >100.4F (38C)c</label>
+      
+
+      <label for="phone">
+      <input type="checkbox" id="Cough" value="Cough">
+      Cough </label>
+
+      <label for="phone">
+      <input type="checkbox" id="ShortBreath" value="ShortBreath">
+      Shortness of breath (dyspnea) </label>
+
+      <label for="phone"><input type="checkbox" id="myalgia" value="myalgia">
+      Muscle aches (myalgia) / Headache </label>
+
+      <label for="phone"><input type="checkbox" id="rhinorrhea" value="rhinorrhea">
+       Runny nose (rhinorrhea) </label>
+
+        
+
+      <label for="phone"><input type="checkbox" id="soreThroat" value="soreThroat">
+      Sore throat </label>
+      
+      <label for="phone"><input type="checkbox" id="Feverish" value="Feverish">
+       Subjective fever (felt feverish) </label>
+
+      <label for="phone"><input type="checkbox" id="chills" value="chills">
+      Chills</label>
+
+      
+
+      <label for="phone"><input type="checkbox" id="NauVomLoo" value="NauVomLoo">
+       Nausea / vomiting / Abdominal pain / Loose motions </label>
+
+       <label for="phone">Other Symptoms:</label>
+      <input type="text" id="otherSymp" name="">
+
+        </div>
+
+        <br/>
+        <br/>
+
+        <hr/>
+
+        <label for="que2" required>Q2)What is the current status of this person?:</label>
+
+        <div class="checkbox secondQue">
+      <label><input type="checkbox" id="pui" value="PatientUnderInvestigation">Patient under investigation (PUI)</label>
+
+      <label><input type="checkbox" id="LabConfrm" value="Labconfirmed">Laboratory-confirmed case</label>
+     <label> Any Community contact with another COVID19 case</label>
+     <input type="radio" id="CommuContYes" name="CommuSpread"  value="Yes"> Yes
+      &nbsp&nbsp
+    <input type="radio" name="CommuSpread" id="CommuContNo"  value="No"> No &nbsp &nbsp
+      <br/>
+      <br/>
+      <label for="phone">Any healthcare contact; Specify:</label>
+      <input type="text" id="heacareCont" name="">
+
+      <label for="phone">Travel to another City / State / Country:</label>
+      <input type="text" id="otherCity" name="">
+
+        </div>
+
+
+        <br/>
+        <br/>
+        
+
+        <hr/>
+
+        <label for="que3" required>Q3)Pre-existing medical conditions?:</label>
+
+
+
+        <div class="checkbox thirdQue">
+      <label>
+        <input type="checkbox" id="copd" value="ChronicLungDisease">Chronic Lung Disease (asthma/emphysema/COPD) <br/>
+        <input type="number" id="dura1" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="diabetes" value="Diabetes">Diabetes Mellitus &nbsp;&nbsp;
+        <input type="number" id="dura2" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="cardiovas" value="Cardiovascular">Cardiovascular disease &nbsp;&nbsp;
+        <input type="number" id="dura3" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="chronicrenal" value="ChronicRenalDisease">Chronic Renal disease &nbsp;&nbsp;
+        <input type="number" id="dura4" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="chronicliver" value="ChronicLiverDisease">Chronic Liver disease &nbsp;&nbsp;
+        <input type="number" id="dura5" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="hivcancer" value="ImmunocompromisedCondition">Immunocompromised Condition (HIV/Cancer/etc) &nbsp;&nbsp; <br/>
+        <input type="number" id="dura6" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="neurolog" value="Neurological">Neurologic/neurodevelopmental &nbsp;&nbsp;<br/>
+        <input type="number" id="dura7" placeholder="Enter Duration">
+        <br/> 
+
+
+        <label for="phone">Other chronic diseases? SPECIFY :</label>
+      <input type="text" id="chronodisease" name="">
+      <br/>
+        <input type="number" id="dura8" placeholder="Enter Duration">
+        <br/> 
+
+        <input type="checkbox" id="pregnant" value="pregnant">If female, currently pregnant
+        <input type="number" id="dura9" placeholder="Enter Duration">
+        <br/>
+
+        <input type="checkbox" id="csmoke" value="CurrentSmoker">Current smoker
+        <input type="number" id="dura10" placeholder="Enter Duration">
+        <br/>
+
+        <input type="checkbox" id="fsmoke" value="FormerSmoker">Former smoker
+        <input type="number" id="dura11" placeholder="Enter Duration">
+        <br/>  
+
+
+
+      </label>
+
+      <hr/>
+
+
+      <label for="onexami" required><strong>On Examination </strong></label>
+
+      <label for="Temp">Temperature &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="temp"></label>
+
+      <label for="Pulse">Pulse Rate &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="pulserate"></label>
+
+      <label for="Resp">Respiratory Rate &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="resprate"></label>
+
+      <label for="Oxy">Oxygen Saturation &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="oxysatu"></label>
+
+      <label for="BP">B.P. &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="bp"></label>
+      
+
+
+
     </fieldset>
 
    

@@ -2,23 +2,174 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sample CRUD Firebase Javascript - 01 Read Data</title>
+    <title>Search Data</title>
     <link rel="stylesheet" href="css/viewLab.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    <style type="text/css">
+      body{
+        background-image: url("img/BASE.jpg");
+        background-repeat: no-repeat center center center;
+        background-size: cover
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+table  {
+  border: 1px solid cyan;
+  border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+  text-align: left;
+  /*height: 50px;*/
+  vertical-align: middle;
+}
+</style>
   </head>
+
   <body>
-
-    <h1>Lab Reports
-      <br/><small><em>Displaying Lab Reports</em></small>
+<center>
+    <input type="text" id="search" placeholder="ENter search MR no."/>
+<button type="button" class="btn btn-info" onclick="retriveData()">Search</button>
+<button type="button" class="btn btn-info" onclick="reload()">Clear</button>
+ </center>
+ <h1 style="opacity: 0">Search IPD
+      <br/><small><em></em></small>
+      <br/>
     </h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/><br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!-- <ul id="userDate"></ul> -->
+    <table id="histab" style="color: white;font-weight: bold;font-size: 30px;display: none;"  id="userHis" border="1">
 
+      <tr >
+        
+      </tr>
+      <tr >
+          <td colspan="5" style="text-align: center;">During this illness, did the patient experience any of the following symptoms?</td>
+      </tr>
+      <tr>
+          <!-- <td>Fever >100.4F (38C)c</td>
+          <td>Cough (new onset or worsening of chronic cough)</td>
+          <td>Shortness of breath (dyspnea)</td>
+          <td>Muscle aches (myalgia) / Headache</td>
+          <td>Runny nose (rhinorrhea)</td> -->
 
-    <ul id="userList"></ul>
+      </tr>
+      <tr>
+          <!-- <td>Sore throat</td>
+          <td>Subjective fever (felt feverish)</td>
+          <td>Chills</td>
+          <td>Nausea / vomiting / Abdominal pain / Loose motions</td>
+          <td>Other symptoms</td> -->
+      
+        
+      </tr>
 
-    <div id="userDetail">
-     <!-- <p >Name :<strong class="detailName"></strong></p> -->
-    </div>
+       <tr >
+          <td colspan="5" style="text-align: center;">What is the current status of this person?</td>
+        </tr>
+        <tr>
+          <!-- <td>Patient under investigation (PUI)</td>
+          <td>Laboratory-confirmed case</td>
+          <td>Any Community contact with another COVID19 case</td>
+          <td>Any healthcare contact </td>
+          <td>Travel to another City / State / Country</td> -->
+      </tr>
+
+        <tr >
+          <td colspan="5" style="text-align: center;">Pre-existing medical conditions?</td>
+        </tr>
+
+        <tr>
+          <!-- <td>Chronic Lung Disease (asthma/emphysema/COPD)</td>
+          <td>Diabetes Mellitus</td>
+          <td>Cardiovascular disease</td>
+          <td>Chronic Renal disease</td>
+          <td>Chronic Liver disease</td> -->
+        </tr>
+        <tr>
+          <!-- <td>Immunocompromised Condition (HIV/Cancer/etc)</td>
+          <td>Neurologic/neurodevelopmental</td>
+          <td>Other chronic diseases</td>
+          <td>If female, currently pregnant</td>
+          <td>Current smoker</td>
+          <td>Former smoker</td> -->
+        </tr>
+
+      <tr >
+          <td colspan="5" style="text-align: center;">On Examination</td>
+        </tr>
+        <tr>
+          <!-- <td>Temperature</td>
+          <td>PulseRate</td>
+          <td>Respiratory Rate</td>
+          <td>Oxygen Saturation</td>
+          <td>Blood Pressure</td> -->
+        </tr>
+
+    </table>
+
+    <!-- <div id="userID">
+     <p >Name :<strong class="detailName"></strong></p>
+    </div> -->
+    <table id="reptab" style="color:white;display: none;font-size: 30px" id="userID" border="1">
+      <tr style="color:white"><th> Test </th></tr>
+      
+<tr><td>ALP </td></tr>
+<tr><td>APTT</td></tr>
+<tr><td>BSL </td></tr>
+<tr><td>BloodUrea</td></tr>
+<tr><td>CKTotal</td></tr>
+<tr><td>CRP </td></tr>
+<tr><td>CXR </td></tr>
+<tr><td>DDimer</td></tr>
+<tr><td>ECG</td></tr>
+<tr><td>ESR</td></tr>
+<tr><td>PBS</td></tr>
+<tr><td>PT </td></tr>
+<tr><td>RecticCount </td></tr>
+<tr><td>SGOT</td></tr>
+<tr><td>SGPT</td></tr>
+<tr><td>SerumFerritin</td></tr>
+<tr><td>SerumLDH </td></tr>
+<tr><td>SerumNa </td></tr>
+<tr><td>SerumProcal</td></tr>
+<tr><td>Serumalbumin</td></tr>
+<tr><td>Serumcl </td></tr><tr>
+<td>Serumcretanine</td></tr>
+<tr><td>Serumk </td></tr>
+<tr><td>Serummg</td></tr>
+<tr><td>SrAmylase </td></tr>
+<tr><td>TropTI </td></tr>
+<tr><td>hb </td></tr>
+<tr><td>nl </td></tr>
+<tr><td>platelets</td></tr>
+<tr><td>tlc </td></tr>
 
   </body>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script type="text/javascript" src="js/appViewLabRep.js"></script>
+  <script type="text/javascript" src="js/searchIPD.js"></script>
 </html>
