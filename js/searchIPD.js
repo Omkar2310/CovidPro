@@ -126,8 +126,16 @@ var key1=snapshot.key;
 			"<td>Age : " + mp.get("age")  +"</td>" + "<td> Gender : " + mp.get("gen")  +"</td>"
 			+ "<td> DOA : " + mp.get("doa")  +"</td>" + "<td> IPD No. " + snapshot.key  +"</td>"
 			);
+		var cou="";
+		if(mp.get("Cough") === "")
+		{
+			cou="NO";
+		}
+		else{
+			cou=mp.get("Cough");
+		}
 		$("tr:eq("+2+")").append("<td>Fever >100.4F (38C)c : "+ mp.get("Fever") +"</td>" +
-          "<td>Cough (new onset or worsening of chronic cough) : " +mp.get("Cough") + "</td>"+
+          "<td>Cough (new onset or worsening of chronic cough) : " + cou + "</td>"+
           "<td>Shortness of breath (dyspnea) : " +mp.get("ShortBreath") + "</td>" +
           "<td>Muscle aches (myalgia) / Headache : " +mp.get("myalgia") + "</td>" +
          "<td>Runny nose (rhinorrhea) : "+mp.get("rhinorrhea") + "</td>");

@@ -44,16 +44,16 @@ function formSubmit(e) {
 
   //que1
 
-  var cough="";
-  var fever="";
-  var ShortBreath="";
-  var myalgia="";
-  var rhinorrhea="";
-  var soreThroat="";
-  var Feverish="";
-  var chills="";
-  var NauVomLoo="";
-  var otherSymp="";
+  var cough="NO";
+  var fever="NO";
+  var ShortBreath="NO";
+  var myalgia="NO";
+  var rhinorrhea="NO";
+  var soreThroat="NO";
+  var Feverish="NO";
+  var chills="NO";
+  var NauVomLoo="NO";
+  var otherSymp="NO";
     if ($('#Cough').is(":checked"))
     {
   // it is checked
@@ -107,21 +107,21 @@ function formSubmit(e) {
 
 
     //Que 2
-    var PUI="";
+    var PUI="NO";
     if ($('#PUI').is(":checked"))
     {
   // it is checked
       PUI=$('#pui').val();
     }
 
-    var LabCon="";
+    var LabCon="NO";
     if ($('#LabConfrm').is(":checked"))
     {
   // it is checked
       LabCon=$('#LabConfrm').val();
     }
 
-    var commuSpread="";
+    var commuSpread="NO";
     if(document.getElementById('CommuContYes').checked)
     {
       commuSpread="Yes";
@@ -138,8 +138,8 @@ function formSubmit(e) {
 
 
     //get que3
-    var chroniclugdi="";
-    var chroniclugdidays="";
+    var chroniclugdi="NO";
+    var chroniclugdidays="0";
     if ($('#copd').is(":checked"))
     {
   // it is checked
@@ -150,8 +150,8 @@ function formSubmit(e) {
     }
 
 
-    var diabetes="";
-    var diabetesdays="";
+    var diabetes="NO";
+    var diabetesdays="0";
     if ($('#diabetes').is(":checked"))
     {
   // it is checked
@@ -161,8 +161,8 @@ function formSubmit(e) {
       console.log(diabetesdays);
     }
 
-    var cardiovas="";
-    var cardiovasdays="";
+    var cardiovas="NO";
+    var cardiovasdays="0";
     if ($('#cardiovas').is(":checked"))
     {
   // it is checked
@@ -172,8 +172,8 @@ function formSubmit(e) {
       console.log(cardiovasdays);
     }
 
-    var chronicrenal="";
-    var chronicrenaldays="";
+    var chronicrenal="NO";
+    var chronicrenaldays="0";
     if ($('#chronicrenal').is(":checked"))
     {
   // it is checked
@@ -183,8 +183,8 @@ function formSubmit(e) {
       console.log(chronicrenalsdays);
     }
 
-    var chronicliver="";
-    var chronicliverdays="";
+    var chronicliver="NO";
+    var chronicliverdays="0";
     if ($('#chronicliver').is(":checked"))
     {
   // it is checked
@@ -195,8 +195,8 @@ function formSubmit(e) {
     }
 
 
-     var hivcancer="";
-    var hivcancerdays="";
+     var hivcancer="NO";
+    var hivcancerdays="0";
     if ($('#hivcancer').is(":checked"))
     {
   // it is checked
@@ -206,8 +206,8 @@ function formSubmit(e) {
       console.log(hivcancerdays);
     }
 
-    var neurolog="";
-    var neurologdays="";
+    var neurolog="NO";
+    var neurologdays="0";
     if ($('#neurolog').is(":checked"))
     {
   // it is checked
@@ -217,8 +217,8 @@ function formSubmit(e) {
       console.log(neurologdays);
     }
 
-    var otherchronic="";
-    var otherchronicdays="";
+    var otherchronic="NO";
+    var otherchronicdays="0";
     // if ($('#chronodisease').is(":checked"))
     {
   // it is checked
@@ -228,8 +228,8 @@ function formSubmit(e) {
       console.log(otherchronicdays);
     }
 
-    var ispreg="";
-    var ispregdays="";
+    var ispreg="NO";
+    var ispregdays="0";
     if ($('#pregnant').is(":checked"))
     {
   // it is checked
@@ -239,8 +239,8 @@ function formSubmit(e) {
       console.log(ispregdays);
     }
 
-    var issmoke="";
-    var issmokedays="";
+    var issmoke="NO";
+    var issmokedays="0";
     if ($('#csmoke').is(":checked"))
     {
   // it is checked
@@ -250,8 +250,8 @@ function formSubmit(e) {
       console.log(issmokedays);
     }
 
-    var isfsmoke="";
-    var isfsmokedays="";
+    var isfsmoke="NO";
+    var isfsmokedays="0";
     if ($('#fsmoke').is(":checked"))
     {
   // it is checked
